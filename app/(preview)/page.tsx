@@ -60,12 +60,12 @@ export default function ChatWithFiles() {
 
     const selectedFiles = Array.from(e.target.files || []);
     const validFiles = selectedFiles.filter(
-      (file) => file.type === "application/pdf" && file.size <= 5 * 1024 * 1024,
+      (file) => file.type === "application/pdf" && file.size <= 50 * 1024 * 1024,
     );
     console.log(validFiles);
 
     if (validFiles.length !== selectedFiles.length) {
-      toast.error("Only PDF files under 5MB are allowed.");
+      toast.error("Only PDF files under 50MB are allowed.");
     }
 
     setFiles(validFiles);
@@ -154,7 +154,7 @@ export default function ChatWithFiles() {
           </div>
           <div className="space-y-2">
             <CardTitle className="text-2xl font-bold">
-              PDF Quiz Generator
+              PDF to Quiz Generator
             </CardTitle>
             <CardDescription className="text-base">
               Upload a PDF to generate an interactive quiz based on its content
@@ -222,7 +222,7 @@ export default function ChatWithFiles() {
                 />
                 <span className="text-muted-foreground text-center col-span-4 sm:col-span-2">
                   {partialQuestions
-                    ? `Generating question ${partialQuestions.length + 1} of 4`
+                    ? `Generating question ${partialQuestions.length + 1} of 25`
                     : "Analyzing PDF content"}
                 </span>
               </div>
@@ -250,7 +250,7 @@ export default function ChatWithFiles() {
           className="flex flex-row gap-2 items-center bg-zinc-900 px-2 py-1.5 rounded-md text-zinc-50 hover:bg-zinc-950 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-50"
         >
           <VercelIcon size={14} />
-          Deploy with Vercel
+          Deployed with Vercel
         </NextLink>
       </motion.div>
     </div>
