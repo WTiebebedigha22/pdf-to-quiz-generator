@@ -99,7 +99,7 @@ export default function ChatWithFiles() {
     setQuestions([]);
   };
 
-  const progress = partialQuestions ? (partialQuestions.length / 4) * 100 : 0;
+  const progress = partialQuestions ? (partialQuestions.length / 25) * 100 : 0;
 
   if (questions.length === 4) {
     return (
