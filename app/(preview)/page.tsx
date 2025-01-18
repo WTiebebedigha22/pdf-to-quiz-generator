@@ -60,12 +60,12 @@ export default function ChatWithFiles() {
 
     const selectedFiles = Array.from(e.target.files || []);
     const validFiles = selectedFiles.filter(
-      (file) => file.type === "application/pdf" && file.size <= 50 * 1024 * 1024,
+      (file) => file.type === "application/pdf" && file.size <= 30 * 1024 * 1024,
     );
     console.log(validFiles);
 
     if (validFiles.length !== selectedFiles.length) {
-      toast.error("Only PDF files under 50MB are allowed.");
+      toast.error("Only PDF files under 30MB are allowed.");
     }
 
     setFiles(validFiles);
@@ -217,7 +217,7 @@ export default function ChatWithFiles() {
               <div className="grid grid-cols-6 sm:grid-cols-4 items-center space-x-2 text-sm">
                 <div
                   className={`h-2 w-2 rounded-full ${
-                    isLoading ? "bg-yellow-500/50 animate-pulse" : "bg-muted"
+                    isLoading ? "bg-green-500/50 animate-pulse" : "bg-muted"
                   }`}
                 />
                 <span className="text-muted-foreground text-center col-span-4 sm:col-span-2">
