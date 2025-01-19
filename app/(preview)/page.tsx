@@ -99,9 +99,9 @@ export default function ChatWithFiles() {
     setQuestions([]);
   };
 
-  const progress = partialQuestions ? (partialQuestions.length / 20) * 100 : 0;
+  const progress = partialQuestions ? (partialQuestions.length / 25) * 100 : 0;
 
-  if (questions.length === 4) {
+  if (questions.length === 25) {
     return (
       <Quiz title={title ?? "Quiz"} questions={questions} clearPDF={clearPDF} />
     );
