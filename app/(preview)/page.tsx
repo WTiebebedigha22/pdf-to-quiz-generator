@@ -101,7 +101,7 @@ export default function ChatWithFiles() {
 
   const progress = partialQuestions ? (partialQuestions.length / 25) * 100 : 0;
 
-  if (questions.length === 25) {
+  if (questions.length === 26) {
     return (
       <Quiz title={title ?? "Quiz"} questions={questions} clearPDF={clearPDF} />
     );
