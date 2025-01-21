@@ -222,7 +222,7 @@ export default function ChatWithFiles() {
                 />
                 <span className="text-muted-foreground text-center col-span-4 sm:col-span-2">
                   {partialQuestions
-                    ? `Generating question ${partialQuestions.length + 1} of 25`
+                    ? `Generating question ${partialQuestions.length + 1} of 60`
                     : "Analyzing PDF content"}
                 </span>
               </div>
@@ -249,7 +249,7 @@ export default function ChatWithFiles() {
           href="https://vercel.com/templates/next.js/ai-quiz-generator"
           className="flex flex-row gap-2 items-center bg-zinc-900 px-2 py-1.5 rounded-md text-zinc-50 hover:bg-zinc-950 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-50"
         >
-          <VercelIcon size={14} />
+          <VercelIcon size={12} />
           Deployed with Vercel
         </NextLink>
       </motion.div>
