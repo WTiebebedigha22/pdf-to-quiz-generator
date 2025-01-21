@@ -32,17 +32,14 @@ export async function POST(req: Request) {
       },
     ],
     schema: questionSchema,
-      output: "array",
-      onFinish: ({ object }) => {
-        const res = questionsSchema.safeParse(object);
-        if (res.error) {
-          throw new Error(res.error.errors.map((e) => e.message).join("\n"));
-        }
-      },
-    });
+    output: "array",
+    onFinish: ({ object }) => {
+      const res = questionsSchema.safeParse(object);
+      if (res.error) {
+        throw new Error(res.error.errors.map((e) => e.message).join("\n"));
+      }
+    },
+  });
 
-    return result.toTextStreamResponse();
-  } catch (error) {
-    return new Response(error.message, { status: 500 });
-  }
+  return result.toTextStreamResponse();
 }
