@@ -21,7 +21,7 @@ export async function POST(req: Request) {
         content: [
           {
             type: "text",
-            text: "Create a multiple choice test based on this document.",
+            text: "Create a multiple choice test (with 40 questions) based on this document.",
           },
           {
             type: "file",
