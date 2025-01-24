@@ -154,10 +154,13 @@ export default function ChatWithFiles() {
           </div>
           <div className="space-y-2">
             <CardTitle className="text-2xl font-bold">
-              PDF to Quiz Generator
+              Rei 
+            </CardTitle>
+            <CardTitle className="text-2xl font-bold">
+              PDF to Examination Compainion 
             </CardTitle>
             <CardDescription className="text-base">
-              Upload a PDF to generate an interactive quiz based on its content
+              Upload a PDF to generate an interactive computer-based test based on its content
               using the <Link href="https://sdk.vercel.ai">AI SDK</Link> and{" "}
               <Link href="https://sdk.vercel.ai/providers/ai-sdk-providers/google-generative-ai">
                 Google&apos;s Gemini Pro
