@@ -222,7 +222,7 @@ export default function ChatWithFiles() {
                 />
                 <span className="text-muted-foreground text-center col-span-4 sm:col-span-2">
                   {partialQuestions
-                    ? `Generating question ${partialQuestions.length + 1} of 60`
+                    ? `Generating question ${partialQuestions.length + 1} of 40`
                     : "Analyzing PDF content"}
                 </span>
               </div>
