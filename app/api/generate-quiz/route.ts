@@ -14,7 +14,7 @@ export async function POST(req: Request) {
       {
         role: "system",
         content:
-          "You are a teacher. Your job is to take a document, and create a multiple choice test (with 40 questions) based on the content of the document.",
+          "You are a teacher. Your job is to take a document, and create a multiple choice test (with 20 questions) based on the content of the document.",
       },
       {
         role: "user",
