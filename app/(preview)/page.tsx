@@ -99,9 +99,9 @@ export default function ChatWithFiles() {
     setQuestions([]);
   };
 
-  const progress = partialQuestions ? (partialQuestions.length / 40) * 100 : 0;
+  const progress = partialQuestions ? (partialQuestions.length / 20) * 100 : 0;
 
-  if (questions.length === 40) {
+  if (questions.length === 20) {
     return (
       <Quiz title={title ?? "Quiz"} questions={questions} clearPDF={clearPDF} />
     );
@@ -225,7 +225,7 @@ export default function ChatWithFiles() {
                 />
                 <span className="text-muted-foreground text-center col-span-4 sm:col-span-2">
                   {partialQuestions
-                    ? `Generating question ${partialQuestions.length + 1} of 40`
+                    ? `Generating question ${partialQuestions.length + 1} of 20`
                     : "Analyzing PDF content"}
                 </span>
               </div>
