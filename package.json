@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier \"app/**/*.{js,jsx,ts,tsx,mjs,cjs,json}\" --write"
   },
   "dependencies": {
     "@ai-sdk/anthropic": "^1.0.5",
@@ -22,10 +23,12 @@
     "ai": "^4.0.16",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "framer-motion": "^11.14.1",
     "lucide-react": "^0.468.0",
-    "next": "15.1.0",
+    "motion": "^12.0.6",
+    "next": "^15.1.6",
     "next-themes": "^0.4.4",
+    "openai": "^4.80.1",
+    "prettier": "^3.4.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-markdown": "^9.0.1",
