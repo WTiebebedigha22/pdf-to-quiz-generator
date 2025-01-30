@@ -1,11 +1,10 @@
 'use client'
-
 import { useState } from 'react'
 import { experimental_useObject } from 'ai/react'
 import { questionsSchema } from '@/lib/schemas'
 import { z } from 'zod'
 import { toast } from 'sonner'
-import { FileUp, Plus, Loader2 } from 'lucide-react'
+import { FileUp, Plus, Loader2, Import } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import {
     Card,
@@ -19,9 +18,12 @@ import { Progress } from '@/components/ui/progress'
 import Quiz from '@/components/quiz'
 import { Link } from '@/components/ui/link'
 import NextLink from 'next/link'
-import { generateQuizTitle } from './actions'
+import Image from 'next/image'
+import { useRouter } from 'next/navigation'
+import { generateQuizTitle } from '../actions'
 import { AnimatePresence, motion } from 'motion/react'
 import { VercelIcon, GitIcon } from '@/components/icons'
+import { createClient } from '@/lib/supabase/client'
 
 export default function ChatWithFiles() {
     const [files, setFiles] = useState<File[]>([])
@@ -29,7 +31,7 @@ export default function ChatWithFiles() {
         []
     )
     const [isDragging, setIsDragging] = useState(false)
-    const [title, setTitle] = useState<string>()
+    const [title, setTitle] = useState<string>('')
 
     const {
         submit,
@@ -47,6 +49,8 @@ export default function ChatWithFiles() {
             setQuestions(object ?? [])
         },
     })
+
+    const { push } = useRouter()
 
     const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const isSafari = /^((?!chrome|android).)*safari/i.test(
@@ -163,17 +167,16 @@ export default function ChatWithFiles() {
                     </div>
                     <div className="space-y-2">
                         <CardTitle className="text-2xl font-bold">
-                            Rei
+                            ReiBot 🤖📑
                         </CardTitle>
-                        <CardTitle className="text-2xl font-bold">
-                            PDF to Examination Compainion
+                        <CardTitle className="text-xl font-bold">
+                            Study your pdf materials, The Smart way.
                         </CardTitle>
                         <CardDescription className="text-base">
                             Upload a PDF to generate an interactive
-                            computer-based test based on its content using the{' '}
-                            <Link href="https://sdk.vercel.ai">AI SDK</Link> and{' '}
-                            <Link href="https://sdk.vercel.ai/providers/ai-sdk-providers/google-generative-ai">
-                                Google&apos;s Gemini Pro
+                            computer-based test based on its content using{' '}
+                            <Link href="https://deepseek.com/">
+                                DeepSeek&apos;s API
                             </Link>
                             .
                         </CardDescription>
@@ -272,6 +275,16 @@ export default function ChatWithFiles() {
                     <VercelIcon size={12} />
                     Deployed with Vercel
                 </NextLink>
+
+                <button
+                    onClick={async () => {
+                        const supabase = createClient()
+                        await supabase.auth.signOut()
+                        push('/login')
+                    }}
+                >
+                    <Image src="/log-out.svg" width={20} height={20} alt="" />
+                </button>
             </motion.div>
         </div>
     )

@@ -1,8 +1,8 @@
 'use server'
-
 import { google } from '@ai-sdk/google'
 import { generateObject } from 'ai'
 import { z } from 'zod'
+import { createClient } from '@/lib/supabase/server'
 
 export const generateQuizTitle = async (file: string) => {
     const result = await generateObject({
